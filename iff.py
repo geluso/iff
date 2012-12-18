@@ -1,9 +1,10 @@
 #!/usr/local/bin/python3
 
-import code
+import room
+from collections import defaultdict
 
 class Direction(object):
-  directions = {}
+  directions = defaultdict()
   def __init__(self, name):
     self.name = name
     Direction.directions[name] = self
@@ -15,22 +16,35 @@ class Direction(object):
   def str_to_dir(cls, str):
     return cls.directions[str]
 
+  @classmethod
+  def valid_movement(cls, str):
+    return "go" in str.split(" ")
+
 Direction.NORTH = Direction("north")
 Direction.SOUTH = Direction("south")
 Direction.EAST = Direction("east")
 Direction.WEST = Direction("west")
 
-class Room(object):
-  def __init__(self, title, description):
-    self.title = title
-    self.description = description 
-    self.exits = {}
+class Item(object):
+  def __init__(self):
+    self.reactions = {}
+    
+  def do(self, action):
+    if action in self.reactions:
+      self.reactions[action]()
+    else:
+      self.nothing()
 
-  def add_exit(self, direction, room):
-    self.exits[direction] = room
+  def nothing(self):
+    print("it does nothing.")
 
-  def __str__(self):
-    return "%s\n%s\n%s\n" % (self.title, (len(self.title) * "="), self.description)
+class Bread(Item):
+  def __init__(self):
+    super(Bread, self).__init__()
+    self.reactions["eat"] = self.eat 
+
+  def eat(self):
+    print("You eat the loaf of bread.")
 
 class Universe(object):
   def __init__(self, start_room):
@@ -42,16 +56,21 @@ class Universe(object):
       self.current_room = self.current_room.exits[direction]
 
   def accept_input(self):
-    return code.InteractiveConsole.raw_input("? ")
+    return input("? ")
+
 
   def tick(self):
     print(self.current_room)
     input = self.accept_input()
     print()
-    self.move(input)
+    if Direction.valid_movement(input):
+      direction = input.split(" ")[1]
+      self.move(direction)
+    else:
+      print("I don't know how to %s.\n" % input)
 
-kitchen = Room("The Kitchen", "You are in the kitchen. The lights are off. There is a hall south.")
-pantry = Room("The Pantry", "You stumble through the darkness and trip over a stale loaf of bread. As you fall you grab for something to stable yourself. Your hand falls on the stovetop and is burnt. In a panic you knock over a rack of knives and they soar into the air before plunging into your back. They puncture your lungs. In your last moments, you cut yourself a slice of bread.")
+kitchen = room.Kitchen()
+pantry = room.Pantry()
 kitchen.add_exit(Direction.EAST, pantry)
 universe = Universe(kitchen)
 while(True):
