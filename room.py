@@ -12,6 +12,7 @@ class Room(object):
   def __str__(self):
     return "%s\n%s\n%s\n" % (self.title, (len(self.title) * "="), self.description)
 
+
 class Kitchen(Room):
 
   title = "The Kitchen"
@@ -30,6 +31,7 @@ class Kitchen(Room):
     else:
       return "The lights are off."
 
+
 class Pantry(Room):
 
   title = "The Pantry"
@@ -38,6 +40,3 @@ class Pantry(Room):
       "on the stovetop and is burnt. In a panic you knock over a rack of knives and " \
       "they soar into the air before plunging into your back. They puncture your " \
       "lungs. In your last moments, you cut yourself a slice of bread."
-
-  def __init__(self):
-    super(Pantry, self).__init__() 
