@@ -23,7 +23,7 @@ class Kitchen(Room):
 
   @property
   def description(self):
-    return "You are in the kitchen. " + self.light() + " There is a hall south."
+    return "You are in the kitchen. " + self.light() + " There is a pantry east."
 
   def light(self):
     if self.light_is_on:
