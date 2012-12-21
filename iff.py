@@ -1,29 +1,10 @@
 #!/usr/local/bin/python3
 
-import room
 from collections import defaultdict
 
-class Direction(object):
-  directions = defaultdict()
-  def __init__(self, name):
-    self.name = name
-    Direction.directions[name] = self
+import room
+import directions
 
-  def __str__(self):
-    return self.name
-
-  @classmethod
-  def str_to_dir(cls, str):
-    return cls.directions[str]
-
-  @classmethod
-  def valid_movement(cls, str):
-    return "go" in str.split(" ")
-
-Direction.NORTH = Direction("north")
-Direction.SOUTH = Direction("south")
-Direction.EAST = Direction("east")
-Direction.WEST = Direction("west")
 
 class Item(object):
   def __init__(self):
@@ -51,7 +32,7 @@ class Universe(object):
     self.current_room = start_room
 
   def move(self, direction):
-    direction = Direction.str_to_dir(direction)
+    direction = directions.str_to_dir(direction)
     if direction in self.current_room.exits:
       self.current_room = self.current_room.exits[direction]
 
@@ -63,7 +44,7 @@ class Universe(object):
     print(self.current_room)
     input = self.accept_input()
     print()
-    if Direction.valid_movement(input):
+    if directions.valid_movement(input):
       direction = input.split(" ")[1]
       self.move(direction)
     else:
@@ -71,7 +52,7 @@ class Universe(object):
 
 kitchen = room.Kitchen()
 pantry = room.Pantry()
-kitchen.add_exit(Direction.EAST, pantry)
+kitchen.add_exit(directions.EAST, pantry)
 universe = Universe(kitchen)
 while(True):
   universe.tick()
