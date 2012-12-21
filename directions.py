@@ -1,4 +1,5 @@
 __str2dir__ = {}
+__opposites__ = {}
 
 class Direction(object):
   def __init__(self, name):
@@ -7,6 +8,9 @@ class Direction(object):
 
   def __str__(self):
     return self.name
+
+  def opposite(self):
+      return __opposites__[self]
 
 
 def str_to_dir(string):
@@ -19,3 +23,8 @@ NORTH = Direction("north")
 SOUTH = Direction("south")
 EAST = Direction("east")
 WEST = Direction("west")
+
+__opposites__[NORTH] = SOUTH
+__opposites__[SOUTH] = NORTH
+__opposites__[EAST] = WEST
+__opposites__[WEST] = EAST

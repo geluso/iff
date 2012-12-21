@@ -52,7 +52,8 @@ class Universe(object):
 
 kitchen = room.Kitchen()
 pantry = room.Pantry()
-kitchen.add_exit(directions.EAST, pantry)
+room.connect(kitchen, pantry, directions.EAST)
+#kitchen.add_exit(directions.EAST, pantry)
 universe = Universe(kitchen)
 while(True):
   universe.tick()
