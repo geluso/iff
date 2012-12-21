@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-import room
+import rooms
 import directions
 
 
@@ -50,9 +50,9 @@ class Universe(object):
     else:
       print("I don't know how to %s.\n" % input)
 
-kitchen = room.Kitchen()
-pantry = room.Pantry()
-room.connect(kitchen, pantry, directions.EAST)
+kitchen = rooms.Kitchen()
+pantry = rooms.Pantry()
+rooms.connect(kitchen, pantry, directions.EAST)
 #kitchen.add_exit(directions.EAST, pantry)
 universe = Universe(kitchen)
 while(True):
