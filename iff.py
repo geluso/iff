@@ -4,6 +4,7 @@ from collections import defaultdict
 
 import rooms
 import directions
+import home_world
 
 
 class Item(object):
@@ -72,10 +73,6 @@ class CommandParser(object):
       print("I don't know how to %s.\n" % input)
 
 
-kitchen = rooms.Kitchen()
-pantry = rooms.Pantry()
-rooms.connect(kitchen, pantry, directions.EAST)
-
-universe = Universe(kitchen)
+universe = Universe(home_world.kitchen)
 while(True):
   universe.tick()
