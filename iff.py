@@ -7,27 +7,6 @@ import directions
 import home_world
 
 
-class Item(object):
-  def __init__(self):
-    self.reactions = {}
-    
-  def do(self, action):
-    if action in self.reactions:
-      self.reactions[action]()
-    else:
-      self.nothing()
-
-  def nothing(self):
-    print("it does nothing.")
-
-class Bread(Item):
-  def __init__(self):
-    super(Bread, self).__init__()
-    self.reactions["eat"] = self.eat 
-
-  def eat(self):
-    print("You eat the loaf of bread.")
-
 class Universe(object):
   def __init__(self, start_room):
     self.current_room = start_room

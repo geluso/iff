@@ -1,5 +1,15 @@
 import directions
+import items
 import rooms
+
+# Define items
+class Bread(items.Item):
+  def __init__(self):
+    super(Bread, self).__init__()
+    self.reactions["eat"] = self.eat 
+
+  def eat(self):
+    print("You eat the loaf of bread.")
 
 # Define rooms
 
