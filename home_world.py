@@ -3,6 +3,21 @@ import items
 import rooms
 
 # Define items
+class Box(items.Item):
+
+    names = set(["box"])
+    description = "A brown cardboard box."
+
+    def __init__(self):
+        super(Box, self).__init__()
+        self.is_open = False
+        self.reactions["open"] = self.open
+
+    def open(self):
+        self.is_open = True
+        print("You open the box.")
+
+
 class Bread(items.Item):
   def __init__(self):
     super(Bread, self).__init__()
@@ -10,6 +25,7 @@ class Bread(items.Item):
 
   def eat(self):
     print("You eat the loaf of bread.")
+
 
 # Define rooms
 
@@ -20,6 +36,9 @@ class Kitchen(rooms.Room):
   def __init__(self):
     super(Kitchen, self).__init__() 
     self.light_is_on = False
+    self.box = Box()
+    for name in self.box.names:
+        self.items[name] = self.box
 
   @property
   def description(self):

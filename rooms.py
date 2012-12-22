@@ -7,6 +7,7 @@ class Room(object):
 
   def __init__(self):
     self.exits = {}
+    self.items = {}
 
   def __str__(self):
     return "%s\n%s\n%s" % (self.title, (len(self.title) * "="), self.description)

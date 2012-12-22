@@ -47,7 +47,12 @@ class CommandParser(object):
       else:
         print("I can only go in one direction at a time.")
     elif command == "look":
-      self.universe.look()
+      if not args:
+        self.universe.look()
+      elif len(args) == 1:
+        item = self.universe.current_room.items.get(args[0])
+        if item:
+          print(item)
     else:
       print("I don't know how to %s.\n" % input)
 
