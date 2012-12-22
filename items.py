@@ -11,5 +11,10 @@ class Item(object):
     else:
       self.nothing()
 
+  def add_action(self, action):
+      self.reactions[action.__name__] = action
+
   def nothing(self):
     print("it does nothing.")
+
+

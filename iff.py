@@ -66,6 +66,6 @@ class CommandParser(object):
         print("I don't know how to %s.\n" % input)
 
 
-universe = Universe(home_world.kitchen)
+universe = Universe(home_world.living_room)
 while(True):
   universe.tick()

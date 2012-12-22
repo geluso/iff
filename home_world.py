@@ -11,7 +11,7 @@ class Box(items.Item):
     def __init__(self):
         super(Box, self).__init__()
         self.is_open = False
-        self.reactions["open"] = self.open
+        self.add_action(self.open)
 
     def open(self):
         self.is_open = True
@@ -21,7 +21,7 @@ class Box(items.Item):
 class Bread(items.Item):
   def __init__(self):
     super(Bread, self).__init__()
-    self.reactions["eat"] = self.eat 
+    self.add_action(self.eat)
 
   def eat(self):
     print("You eat the loaf of bread.")
@@ -36,9 +36,6 @@ class Kitchen(rooms.Room):
   def __init__(self):
     super(Kitchen, self).__init__() 
     self.light_is_on = False
-    self.box = Box()
-    for name in self.box.names:
-        self.items[name] = self.box
 
   @property
   def description(self):
@@ -49,6 +46,17 @@ class Kitchen(rooms.Room):
       return "The room is brightly lit. You see a candlestick."
     else:
       return "The lights are off."
+
+
+class LivingRoom(rooms.Room):
+
+    title = "Living Room"
+    description = "You are in a living room. There isn't much here. On the " \
+        "floor is a box. In a corner is an aquarium. To the north is a kitchen."
+
+    def __init__(self):
+        super(LivingRoom, self).__init__()
+        self.add_items([Box()])
 
 
 class Pantry(rooms.Room):
@@ -62,6 +70,8 @@ class Pantry(rooms.Room):
 
 # Connect rooms
 
+living_room = LivingRoom()
 kitchen = Kitchen()
 pantry = Pantry()
+rooms.connect(living_room, kitchen, directions.NORTH)
 rooms.connect(kitchen, pantry, directions.EAST)
