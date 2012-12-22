@@ -56,7 +56,14 @@ class CommandParser(object):
         if item:
           print(item)
     else:
-      print("I don't know how to %s.\n" % input)
+      failure = True
+      if len(args) == 1:
+        item = self.universe.current_room.items.get(args[0])
+        if item and command in item.reactions:
+          item.do(command)
+          failure = False
+      if failure:
+        print("I don't know how to %s.\n" % input)
 
 
 universe = Universe(home_world.kitchen)
