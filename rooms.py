@@ -9,7 +9,7 @@ class Room(object):
     self.exits = {}
 
   def __str__(self):
-    return "%s\n%s\n%s\n" % (self.title, (len(self.title) * "="), self.description)
+    return "%s\n%s\n%s" % (self.title, (len(self.title) * "="), self.description)
 
 def connect(src, dest, direction, bidirectional=True):
   src.exits[direction] = dest
