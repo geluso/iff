@@ -6,16 +6,27 @@ import rooms
 class Box(items.Item):
 
     names = set(["box"])
-    description = "A brown cardboard box."
 
     def __init__(self):
         super(Box, self).__init__()
         self.is_open = False
         self.add_action(self.open)
+        self.add_action(self.close)
+
+    @property
+    def description(self):
+        if self.is_open:
+            return "The box has a book inside."
+        else:
+            return "A brown cardboard box."
 
     def open(self):
         self.is_open = True
         print("You open the box.")
+
+    def close(self):
+        self.is_open = False
+        print("You close the box.")
 
 
 class Bread(items.Item):
