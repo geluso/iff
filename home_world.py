@@ -1,9 +1,24 @@
+# -*- coding: utf-8 -*-
+
 import directions
 import items
 import rooms
 
 # Define items
-class Box(items.Item):
+class BookOnIthkuil(items.Item):
+
+    names = set(["book"])
+    description = "A book titled 'Ithkuil'"
+
+    def __init__(self):
+        super(BookOnIthkuil, self).__init__()
+        self.add_action(self.read)
+
+    def read(self):
+        print("Tram-mļöi hhâsmařpţuktôx.")
+
+
+class Box(items.Item, items.Container):
 
     names = set(["box"])
 
@@ -12,6 +27,7 @@ class Box(items.Item):
         self.is_open = False
         self.add_action(self.open)
         self.add_action(self.close)
+        self.add_item(BookOnIthkuil())
 
     @property
     def description(self):

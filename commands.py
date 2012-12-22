@@ -8,11 +8,21 @@ class CommandParser(object):
     command = tokens[0]
     args = tokens[1:]
     if command == "go":
-      if len(args) == 1:
-        self.universe.move(args[0])
-      else:
-        print("I can only go in one direction at a time.")
+        self.do_go(command, args)
     elif command == "look":
+        self.do_look(command, args)
+    else:
+      success = self.do_item_action(command, args)
+      if not success:
+        print("I don't know how to %s.\n" % user_input)
+
+  def do_go(self, command, args):
+      if len(args) == 1:
+          self.universe.move(args[0])
+      else:
+          print("I can only go in one direction at a time.")
+
+  def do_look(self, command, args):
       # If no args look at current room
       if not args:
         self.universe.look()
@@ -21,12 +31,21 @@ class CommandParser(object):
         item = self.universe.current_room.items.get(args[0])
         if item:
           print(item)
-    else:
-      failure = True
+      else:
+          print("I don't know what to look at.")
+
+  def do_item_action(self, command, args):
       if len(args) == 1:
-        item = self.universe.current_room.items.get(args[0])
-        if item and command in item.reactions:
-          item.do(command)
-          failure = False
-      if failure:
-        print("I don't know how to %s.\n" % input)
+          # Search through current items in the room
+          item = self.universe.current_room.items.get(args[0])
+          if item and command in item.reactions:
+              item.do(command)
+              return True
+          # Search through current containers in the room
+          for item in self.universe.current_room.items.values():
+              if hasattr(item, "get"):
+                  target = item.get(args[0])
+                  if target and command in target.reactions:
+                      target.do(command)
+                      return True
+      return False
