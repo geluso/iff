@@ -28,24 +28,18 @@ class CommandParser(object):
         self.universe.look()
       # else if single arg look at arg
       elif len(args) == 1:
-        item = self.universe.current_room.items.get(args[0])
+        item = self.universe.visible_items.get(args[0])
         if item:
           print(item)
+        else:
+            print("There is no %s here." % args[0])
       else:
           print("I don't know what to look at.")
 
   def do_item_action(self, command, args):
       if len(args) == 1:
-          # Search through current items in the room
-          item = self.universe.current_room.items.get(args[0])
+          item = self.universe.visible_items.get(args[0])
           if item and command in item.reactions:
               item.do(command)
               return True
-          # Search through current containers in the room
-          for item in self.universe.current_room.items.values():
-              if hasattr(item, "get"):
-                  target = item.get(args[0])
-                  if target and command in target.reactions:
-                      target.do(command)
-                      return True
       return False

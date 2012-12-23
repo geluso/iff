@@ -16,7 +16,15 @@ class BookOnIthkuil(items.Item):
         self.add_action(self.read)
 
     def read(self):
-        print("Tram-mļöi hhâsmařpţuktôx.")
+        print("Ithkuil: Tram-mļöi hhâsmařpţuktôx.\n\n" \
+                  "English: On the contrary, I think it may turn out that this " \
+                  "rugged mountain range trails off at some point.\n\n" \
+                  "As you read the book your mind briefly lingers on the memories of " \
+                  "your childhood learning the intricacies of a language designed " \
+                  "to make you " \
+                  "think faster. The thinking was that if you learned at a young "\
+                  "age it would be become the default language you would think in, " \
+                  "enabling you to think faster.")
 
 
 class Box(items.Item, items.Container):
