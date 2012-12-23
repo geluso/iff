@@ -8,7 +8,8 @@ import rooms
 class BookOnIthkuil(items.Item):
 
     names = set(["book"])
-    description = "A book titled 'Ithkuil'"
+    description = "A book titled 'Ithkuil: A Philosophical Design for a " \
+        "Hypothetical Language'"
 
     def __init__(self):
         super(BookOnIthkuil, self).__init__()
