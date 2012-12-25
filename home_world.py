@@ -3,6 +3,7 @@
 import directions
 import items
 import rooms
+import universe
 
 # Define items
 class BookOnIthkuil(items.Item):
@@ -111,3 +112,8 @@ kitchen = Kitchen()
 pantry = Pantry()
 rooms.connect(living_room, kitchen, directions.NORTH)
 rooms.connect(kitchen, pantry, directions.EAST)
+
+def start():
+    u = universe.Universe(living_room)
+    while(True):
+        u.tick()
