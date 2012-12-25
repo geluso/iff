@@ -16,16 +16,16 @@ class BookOnIthkuil(items.Item):
         super(BookOnIthkuil, self).__init__()
         self.add_action(self.read)
 
-    def read(self):
-        print("Ithkuil: Tram-mļöi hhâsmařpţuktôx.\n\n" \
-                  "English: On the contrary, I think it may turn out that this " \
-                  "rugged mountain range trails off at some point.\n\n" \
-                  "As you read the book your mind briefly lingers on the memories of " \
-                  "your childhood learning the intricacies of a language designed " \
-                  "to make you " \
-                  "think faster. The thinking was that if you learned at a young "\
-                  "age it would be become the default language you would think in, " \
-                  "enabling you to think faster.")
+    def read(self, universe):
+        universe.print(
+          "Ithkuil: Tram-mļöi hhâsmařpţuktôx.\n\n"
+          "English: On the contrary, I think it may turn out that this "
+          "rugged mountain range trails off at some point.\n\n"
+          "As you read the book your mind briefly lingers on the memories of "
+          "your childhood learning the intricacies of a language designed "
+          "to make you think faster. The thinking was that if you learned at "
+          "a young age it would be become the default language you would "
+          "think in, enabling you to think faster.")
 
 
 class Box(items.Item, items.Container):
@@ -46,13 +46,13 @@ class Box(items.Item, items.Container):
         else:
             return "A brown cardboard box."
 
-    def open(self):
+    def open(self, universe):
         self.is_open = True
-        print("You open the box.")
+        universe.print("You open the box.")
 
-    def close(self):
+    def close(self, universe):
         self.is_open = False
-        print("You close the box.")
+        universe.print("You close the box.")
 
 
 class Bread(items.Item):
@@ -60,8 +60,8 @@ class Bread(items.Item):
     super(Bread, self).__init__()
     self.add_action(self.eat)
 
-  def eat(self):
-    print("You eat the loaf of bread.")
+  def eat(self, universe):
+    universe.print("You eat the loaf of bread.")
 
 
 # Define rooms

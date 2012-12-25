@@ -20,7 +20,7 @@ class CommandParser(object):
       if len(args) == 1:
           self.universe.move(args[0])
       else:
-          print("I can only go in one direction at a time.")
+          self.universe.print("I can only go in one direction at a time.")
 
   def do_look(self, command, args):
       # If no args look at current room
@@ -30,16 +30,16 @@ class CommandParser(object):
       elif len(args) == 1:
         item = self.universe.visible_items.get(args[0])
         if item:
-          print(item)
+          self.universe.print(item)
         else:
-            print("There is no %s here." % args[0])
+            self.universe.print("There is no %s here." % args[0])
       else:
-          print("I don't know what to look at.")
+          self.universe.print("I don't know what to look at.")
 
   def do_item_action(self, command, args):
       if len(args) == 1:
           item = self.universe.visible_items.get(args[0])
           if item and command in item.reactions:
-              item.do(command)
+              item.do(command, self.universe)
               return True
       return False
