@@ -14,6 +14,21 @@ body {
 	width: 624px;
 	height: 100%;
 }
+.invalid_sheet {
+    border-radius: 4px;
+    width: 600px;
+    background-color: #bbb;
+    color: #888;
+    box-shadow: inset 0 0 1px 0px rgb(70, 70, 70);
+    margin: 0px 0px 1px 0px;
+    padding: 12px 12px 12px 12px;
+    font-family: courier;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+.invalid_sheet a {
+    color: #89b;
+}
 .sheet {
    	border-radius: 4px;
    	width: 600px;
@@ -33,6 +48,14 @@ body {
 }
 .sheet a {
 	color: rgb(65, 131, 196);
+}
+.sheet .action_output {
+    color: gray;
+}
+.notes {
+    position: absolute;
+    top: 20px;
+    left: 700px;
 }
 .input {
 	border-radius: 4px;
