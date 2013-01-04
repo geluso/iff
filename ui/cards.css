@@ -1,0 +1,140 @@
+body {
+	margin: 0px 0px 0px 0px;
+	background: rgb(220, 220, 210);
+	height: 100%;
+}
+#left_cover {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 100%;
+	z-index: 3;
+	background: rgb(220, 220, 210);
+	box-shadow: inset 0 0 2px 0px rgb(90, 90, 90);
+	box-shadow: 0 0 2px 0px rgb(70, 70, 70);
+}
+#right_cover {
+	position: fixed;
+	top: 0px;
+	left: 664px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background: rgb(220, 220, 210);
+	box-shadow: inset 0 0 2px 0px rgb(90, 90, 90);
+	box-shadow: 0 0 2px 0px rgb(70, 70, 70);
+}
+.content {
+	position: absolute;
+	bottom: 1px;
+	padding: 2px 1px 2px 1px;
+	margin: 0px 12px 0px 40px;
+	background: rgb(70, 70, 70);
+	box-shadow: 0 0 2px 0px rgb(70, 70, 70);
+	border-radius: 4px;
+	width: 624px;
+	height: 100%;
+	z-index: 1;
+}
+.card {
+   	border-radius: 4px;
+   	width: 350px;
+   	height: 500px;
+   	background-image: url("paper.png");
+   	box-shadow: inset 0 0 1px 0px rgb(70, 70, 70);
+   	margin: 12px 12px 12px 12px;
+   	padding: 16px 16px 16px 16px;
+   	font-family: courier;
+	font-size: 16px;
+	line-height: 1.5em;
+	z-index: -1;
+}
+.card .name {
+
+}
+.card .description {
+
+}
+.card a {
+	color: rgb(65, 131, 196);
+}
+.card .action_output {
+    color: gray;
+}
+.notes {
+    position: absolute;
+    top: 20px;
+    left: 700px;
+}
+#center_card {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -175px;
+}
+#north_card {
+	position: absolute;
+	top: -460px;
+	left: 50%;
+	margin-left: -175px;
+}
+.arrow-north {
+	position: absolute;
+	left: 50%;
+	top: 93px;
+	width: 0; 
+	height: 0; 
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 16px solid rgb(250, 240, 0);
+}
+#south_card {
+	position: absolute;
+	bottom: -490px;
+	left: 50%;
+	margin-left: -175px;
+}
+.arrow-south {
+	position: absolute;
+	left: 50%;
+	bottom: 62px;
+	width: 0; 
+	height: 0; 
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-top: 16px solid rgb(250, 240, 0);
+}
+#west_card {
+	position: absolute;
+	top: 50%;
+	left: -290px;
+	margin-top: -250px;
+}
+.arrow-west {
+	position: absolute;
+	left: 113px;
+	top: 50%;
+	width: 0; 
+	height: 0; 
+	border-top: 16px solid transparent;
+	border-bottom: 16px solid transparent;
+	border-right: 16px solid rgb(250, 240, 0);
+}
+#east_card {
+	position: absolute;
+	top: 50%;
+	right: -320px;
+	margin-top: -250px;
+}
+.arrow-east {
+	position: absolute;
+	right: 80px;
+	top: 50%;
+	width: 0; 
+	height: 0; 
+	border-top: 16px solid transparent;
+	border-bottom: 16px solid transparent;
+	border-left: 16px solid rgb(250, 240, 0);
+}
