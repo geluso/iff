@@ -21,9 +21,12 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 3;
-	background: rgb(230, 230, 233);
+	background: rgb(240, 240, 243);
 	box-shadow: inset 0 0 2px 0px rgb(90, 90, 90);
 	box-shadow: 0 0 2px 0px rgb(70, 70, 70);
+}
+#tab_wrapper {
+	margin: 0px 0px 2px 0px;
 }
 .content {
 	position: absolute;
