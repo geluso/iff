@@ -71,74 +71,43 @@ body {
     top: 20px;
     left: 700px;
 }
+#center_wrapper {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -200px;
+	height: 600px;
+	width: 400px;
+}
 #center_card {
 	position: relative;
 	top: 50%;
 	left: 50%;
-	margin-top: -250px;
+	margin-top: -550px;
 	margin-left: -175px;
 }
 #north_card {
 	position: absolute;
-	top: -460px;
+	top: -522px;
 	left: 50%;
 	margin-left: -175px;
-}
-.arrow-north {
-	position: absolute;
-	left: 50%;
-	top: 93px;
-	width: 0; 
-	height: 0; 
-	border-left: 16px solid transparent;
-	border-right: 16px solid transparent;
-	border-bottom: 16px solid rgb(235, 230, 0);
 }
 #south_card {
 	position: absolute;
-	bottom: -490px;
+	bottom: -522px;
 	left: 50%;
 	margin-left: -175px;
-}
-.arrow-south {
-	position: absolute;
-	left: 50%;
-	bottom: 62px;
-	width: 0; 
-	height: 0; 
-	border-left: 16px solid transparent;
-	border-right: 16px solid transparent;
-	border-top: 16px solid rgb(235, 230, 0);
 }
 #west_card {
 	position: absolute;
 	top: 50%;
-	left: -290px;
+	left: -372px;
 	margin-top: -250px;
-}
-.arrow-west {
-	position: absolute;
-	left: 113px;
-	top: 50%;
-	width: 0; 
-	height: 0; 
-	border-top: 16px solid transparent;
-	border-bottom: 16px solid transparent;
-	border-right: 16px solid rgb(235, 230, 0);
 }
 #east_card {
 	position: absolute;
 	top: 50%;
-	right: -320px;
+	right: -372px;
 	margin-top: -250px;
-}
-.arrow-east {
-	position: absolute;
-	right: 80px;
-	top: 50%;
-	width: 0; 
-	height: 0; 
-	border-top: 16px solid transparent;
-	border-bottom: 16px solid transparent;
-	border-left: 16px solid rgb(235, 230, 0);
 }
