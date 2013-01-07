@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 	<link rel="stylesheet/less" type="text/css" href="cards.less" />
@@ -9,53 +10,56 @@
 <body>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
 	<div id="left_cover">
 	</div>
-<div class="content">
-	<div class="card" id="north_card">
-		<div class="name">Kitchen<br />===========</div>
-		<br />
-		<br />
-		<div class="description">You are in a fancy kitchen.</div>
-	</div>
+	
+	<div class="card_viewport">
+		<div class="card" id="north_card">
+			<div class="name">Kitchen<br />===========</div>
+			<br />
+			<br />
+			<div class="description">You are in a fancy kitchen.</div>
+		</div>
 
-	<div class="card" id="center_card">
-		<div class="name">Living Room</div>
-		<br />
-		<div class="description">You are in a living room. It's your living room. In spite of living here for many years there isn't much here. On the floor is a <a href="">box</a>, and an <a href="">aquarium</a>. Attached to the box is a <a href="">note</a>.
+		<div class="card" id="center_card">
+			<div class="name">Living Room</div>
+			<br />
+			<div class="description">You are in a living room. It's your living room. In spite of living here for many years there isn't much here. On the floor is a <a href="">box</a>, and an <a href="">aquarium</a>. Attached to the box is a <a href="">note</a>.
+			</div>
+		</div>
+
+		<div class="card" id="east_card">
+			<div class="name">Outside</div>
+			<br />
+			<div class="description">You are standing outside of your apartment. There is a coffee shop across the street. You see some hipsters bike past you in fixies.</div>
+		</div>
+		<div class="card" id="west_card">
+			<div class="name">Den<br />===========</div>
+			<br />
+			<br />
+			<div class="description">You are in a mostly empty living room. On the floor is a <a href="">box</a>, <a href="">bookshelf</a>, and an <a href="">aquarium</a>. North of you is the kitchen.</div>
+		</div>
+		<div class="card" id="south_card">
+			<div class="name">Bedroom</div>
+			<br />
+			<div class="description">You are in a mostly empty living room. On the floor is a <a href="">box</a>, <a href="">bookshelf</a>, and an <a href="">aquarium</a>. North of you is the kitchen.</div>
 		</div>
 	</div>
 
-	<div class="card" id="east_card">
-		<div class="name">Outside</div>
-		<br />
-		<div class="description">You are standing outside of your apartment. There is a coffee shop across the street. You see some hipsters bike past you in fixies.</div>
+	<div id="right_cover">
+		<div id="tab_wrapper" class="container">
+			<div class="navbar">
+				<div class="navbar-inner" style="border-radius: 0px">
+					<a class="brand" href="#">IF</a>
+				    <ul class="nav">
+				      <li class="active"><a href="#"><img src="compass.svg" width="20px"/></a></li>
+				      <li><a href="#"><img src="cash.svg" width="20px" /></a></li>
+				    </ul>
+			    </div>
+			</div>
+	    </div>
 	</div>
-	<div class="card" id="west_card">
-		<div class="name">Den<br />===========</div>
-		<br />
-		<br />
-		<div class="description">You are in a mostly empty living room. On the floor is a <a href="">box</a>, <a href="">bookshelf</a>, and an <a href="">aquarium</a>. North of you is the kitchen.</div>
-	</div>
-	<div class="card" id="south_card">
-		<div class="name">Bedroom</div>
-		<br />
-		<div class="description">You are in a mostly empty living room. On the floor is a <a href="">box</a>, <a href="">bookshelf</a>, and an <a href="">aquarium</a>. North of you is the kitchen.</div>
-	</div>
-</div>
-<div id="right_cover">
-	<div id="tab_wrapper" class="container">
-		<div class="navbar">
-			<div class="navbar-inner" style="border-radius: 0px">
-				<a class="brand" href="#">IF</a>
-			    <ul class="nav">
-			      <li class="active"><a href="#"><img src="compass.svg" width="20px"/></a></li>
-			      <li><a href="#"><img src="cash.svg" width="20px" /></a></li>
-			    </ul>
-		    </div>
-		</div>
-    </div>
-</div>
-</div>
 </body>
+
 </html>
