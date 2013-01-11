@@ -66,6 +66,31 @@ body {
 	}
 }
 
+.item_view {
+   	border-radius: 4px;
+   	width: @card_width - (2 * @card_padding) + 10;
+   	height: @card_height - (2 * @card_padding) + 10;
+   	background-color: rgb(245, 245, 150);
+   	background-image: url("speckles.png");
+   	box-shadow: inset 0 0 1px 0px rgb(70, 70, 70);
+   	margin: 0 0 0 0;
+   	padding: @card_padding @card_padding @card_padding @card_padding;
+   	font-family: courier;
+	font-size: 14px;
+	line-height: 1.5em;
+	z-index: -1;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -(@card_height / 2) + 40;
+	margin-left: -((@card_width + 10)/ 2);
+
+	a {
+		color: rgb(65, 131, 196);
+	}
+}
+
 #center_card {
 	position: absolute;
 	top: 50%;
