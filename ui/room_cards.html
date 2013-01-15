@@ -10,6 +10,45 @@
 <body>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+	    $(document).ready(function() {
+	    	transition_time = 600;
+       		$("#east_card").on("click", function(event) {
+ 		        $("#east_card").animate({
+ 		        	right: "160px"
+ 		        }, transition_time, function() {});
+ 		        $("#center_card").animate({
+ 		        	left: "-130px"
+ 		        }, transition_time, function() {});
+ 		        $("#west_card").animate({
+ 		        	left: "-=280px"
+ 		        }, transition_time, function() {});
+ 		        $("#north_card").animate({
+ 		        	left: "-130px"
+ 		        }, transition_time, function() {});
+ 		        $("#south_card").animate({
+ 		        	left: "-130px"
+ 		        }, transition_time, function() {});
+ 		    });
+ 		    $("#center_card").on("click", function(event) {
+ 		        $("#east_card").animate({
+ 		        	right: "-280px"
+ 		        }, transition_time, function() {});
+ 		        $("#center_card").animate({
+ 		        	left: "50%"
+ 		        }, transition_time, function() {});
+ 		        $("#west_card").animate({
+ 		        	left: "+=280px"
+ 		        }, transition_time, function() {});
+ 		        $("#north_card").animate({
+ 		        	left: "50%"
+ 		        }, transition_time, function() {});
+ 		        $("#south_card").animate({
+ 		        	left: "50%"
+ 		        }, transition_time, function() {});
+ 		    });
+ 	    });
+    </script>
 
 	<div id="left_cover">
 	</div>
