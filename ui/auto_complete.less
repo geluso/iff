@@ -52,6 +52,8 @@ body {
 @scroll_view_width: @viewport_width - 2 * @scroll_view_padding;
 @scroll_view_height: 500px;
 .scroll_view {
+	overflow: auto;
+
    	width: @scroll_view_width - (2 * @scroll_view_padding);
    	height: @scroll_view_height - (2 * @scroll_view_padding);
 
@@ -82,7 +84,7 @@ body {
 @input_box_width: @scroll_view_width;
 #input_box_wrapper {
 	position: absolute;
-	top: @scroll_view_height;
+	top: @scroll_view_height + @scroll_view_padding;
 	left: 50%;
 	margin-left: -(@scroll_view_width / 2);
 
@@ -144,8 +146,15 @@ body {
 
    	font-size: @base_font_size + 2px;
 }
+.action {
+	font-weight: bold;
+}
 
 .location {
 	display: inline;
 	text-decoration: underline;
+}
+
+.crossed_out {
+	text-decoration: line-through;
 }

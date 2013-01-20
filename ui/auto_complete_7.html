@@ -10,6 +10,11 @@
 <body>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+		$(document).ready(function() {
+			$(".scroll_view").animate({scrollTop:$(".scroll_view")[0].scrollHeight}, 0);;
+		});
+    </script>
     <div id="left_cover">
 	</div>
 
@@ -27,14 +32,22 @@
 				<div>
 					<div class="action">&gt; You inspect your jacket.</div>
 					<br/>
-					<div>Your favorite jacket. It's awesome. It might not look awesome, but looks aren't everything. It's what's inside that counts. Inside you find <a class="item" href="#">a lump of heavy cheese</a>.</div>
+					<div>Your favorite jacket. It's awesome. It might not look awesome, but looks aren't everything. It's what's inside that counts. Inside you find <a class="item" href="auto_complete_7.html">a lump of heavy cheese</a>.</div>
+				</div>
+				<br/>
+				<div>
+					<div class="action">&gt; You inspect your pants.</div>
+					<br/>
+					<div>Your lucky pants. Great things have happened in these pants. Inside is <a class="item" href="auto_complete_8.html">a long piece of rope</a>.</div>
 				</div>
 		</div>
 
 		<div id="input_box_wrapper">
-			<div id="input_box_input_area"></div>
+			<div id="input_box_input_area">
+				<a class="item" href="auto_complete_4.html">a lump of heavy cheese</a>
+			</div>
 			<div id="input_box_submit">
-				<a class="btn btn-large" href="auto_complete.html"><i class="icon-eye-open"></i></a>
+				<a class="btn btn-large" href="auto_complete.html"><i class="icon-ok"></i></a>
 			</div>
 		</div>
 	</div>
